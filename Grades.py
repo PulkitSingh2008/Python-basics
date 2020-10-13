@@ -8,13 +8,17 @@ def grade_obtained(percentage):
 	else:
 		print("Fail")
 
+total = 0 #Initializing variable
 print("Please enter your marks out of 100")
-subject1=float(input("Please enter your marks of subject 1: "))
-subject2=float(input("Please enter your marks of subject 2: "))
-subject3=float(input("Please enter your marks of subject 3: "))
-subject4=float(input("Please enter your marks of subject 4: "))
-subject5=float(input("Please enter your marks of subject 5: "))
+for i in range(1, 6):
+    subject = float(input("Please enter your marks of subject " + str(i) + ": "))
+    if 0 >= subject or subject >= 100: #Eliminating invalid inputs
+        print("Invalid input")
+        exit()
+    total += subject
 
-percentage = (subject1 + subject2 + subject3 + subject4 + subject5) / 500 * 100
 
+percentage = (total) / 500 * 100
+print("Percentage optained : " + str(percentage))
+print("Grade obtained : ")
 grade_obtained(percentage)
